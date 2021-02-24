@@ -1,2 +1,2 @@
 # FiniNe
-Arduino Fini-te state machi-Ne Library from TaIO Systems
+Arduino version of the Fini-te state machi-Ne Library from TaIO Systems
