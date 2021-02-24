@@ -1,0 +1,34 @@
+/*
+ * About this file: FsmDefErrorTypes.h file of the project.
+ *
+ * Author:  Ricardo Esteven Lucano – TaIO Systems SAS
+ * Version: 1.0
+ * Date: Nov 27, 2018
+ */
+
+#ifndef _FSM_DEF_RETURN_TYPES_H_
+#define _FSM_DEF_RETURN_TYPES_H_
+
+typedef enum
+{
+  FSM_DEF_SUCCESSFUL_RETURN = 0,
+  FSM_DEF_INVALID_PARAMETER,
+  // FSM context management
+  FSM_DEF_CONTEXT_BUFF_OVERFLOW,
+  FSM_DEF_REPEATED_UID,
+  FSM_DEF_NULL_CALLBACK,
+  // Events management
+  FSM_DEF_UNMANAGED_EVENT,
+  FSM_DEF_EVENT_BUFF_OVERFLOW,
+  FSM_DEF_EVENT_NO_FSM_SUBSCRIBED,
+  FSM_DEF_EVENT_NOT_ADDED,
+  // Timed Events Dispatcher manager
+  FSM_DEF_TED_NOT_INITIALIZED,
+  FSM_DEF_TED_EVENT_ALREADY_TIMED,
+  FSM_DEF_TED_BUFF_OVERFLOW,
+  FSM_DEF_TED_STOPPED_TIMER,
+  FSM_DEF_TED_UNMANAGED_TIMER,
+  FSM_DEF_TED_EVENT_NOT_ADDED
+}FSM_DEF_RETURN_OP_E;
+
+#endif /* _FSM_DEF_RETURN_TYPES_H_ */
