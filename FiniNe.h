@@ -13,15 +13,21 @@
 
 #include "FsmDefinition.h"
 
+//Simple names for arduino
+#define FiniNeTable FSM_DEF_TABLE_T
+#define FiniNeEventManager FSM_EVENT_MANAGER_LIST_T
+
 class FiniNe {
   public:
     FiniNe();
     FSM_DEF_RETURN_OP_E begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE_T table[], UINTN tableSize, FSM_EVENT_MANAGER_LIST_T eventManagerList[], UINTN eventManagerListSize);
+    FSM_DEF_RETURN_OP_E begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE_T table[], UINTN tableSize);
     FSM_DEF_RETURN_OP_E setNextEvent(UINTN eventId);
 
   private:
     //FSM_DEF_TABLE_T* fsmTable;
     FSM_DEF_CONTEXT_T fsmContext;
+    FSM_EVENT_MANAGER_LIST_T emptyEventManager = {};
     UINTN fsmId;
 };
 
