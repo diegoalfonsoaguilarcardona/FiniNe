@@ -29,7 +29,7 @@ FsmDefInit ()
 
 FSM_DEF_RETURN_OP_E
 FsmDefCreate (
-  INPUT FSM_DEF_CONTEXT_T * _newFsmContext)
+  FSM_DEF_CONTEXT_T * _newFsmContext)
 {
 
   if (_newFsmContext == NULL ||
@@ -187,8 +187,8 @@ FsmDefMainLoop ()
 
 FSM_DEF_RETURN_OP_E
 FsmDefHandler (
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext)
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext)
 {
   FSM_LOG_DEBUG("FSM Debug:%s\r\n",__FUNCTION__);
   INTN ret = 0;
@@ -257,8 +257,8 @@ FsmDefHandler (
 
 FSM_DEF_RETURN_OP_E
 FsmDefRunEventManager (
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext)
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext)
 {
   FSM_DEF_RETURN_OP_E ret = FSM_DEF_EVENT_NO_FSM_SUBSCRIBED;
 
@@ -297,8 +297,8 @@ FsmDefRunEventManager (
 
 FSM_DEF_RETURN_OP_E
 FsmDefSetNextEvent (
-  INPUT UINTN _fsmUid,
-  INPUT UINTN _evt)
+  UINTN _fsmUid,
+  UINTN _evt)
 {
   FSM_LOG_DEBUG("FSM Debug:%s\r\n",__FUNCTION__);
 
@@ -384,7 +384,7 @@ FsmDefSetNextEvent (
 UINTN
 
 FsmDefGetState (
-  INPUT UINTN _fsmUid)
+  UINTN _fsmUid)
 {
   FSM_LOG_DEBUG("FSM Debug:%s\r\n",__FUNCTION__);
 
@@ -422,7 +422,7 @@ FsmDefEraseFsmBuff ()
 
 FSM_DEF_CONTEXT_T *
 FsmDefUidExist(
-  INPUT UINTN _fsmUid)
+  UINTN _fsmUid)
 {
   FSM_LOG_DEBUG("FSM Debug: %s\r\n",__FUNCTION__);
 
@@ -444,8 +444,8 @@ FsmDefUidExist(
 
 FSM_DEF_RETURN_OP_E
 FsmDefConcatenateFsmUidToFsmTable(
-  INPUT UINTN _fsmUid,
-  INPUT FSM_DEF_TABLE_HND_T * _table
+  UINTN _fsmUid,
+  FSM_DEF_TABLE_HND_T * _table
   )
 {
   if(_table == NULL )
@@ -473,8 +473,8 @@ FsmDefConcatenateFsmUidToFsmTable(
 
 BOOL
 FsmDefIsEvtInTable(
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext)
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext)
 {
   FSM_LOG_DEBUG("FSM Debug: %s\r\n",__FUNCTION__);
 
@@ -496,8 +496,8 @@ FsmDefIsEvtInTable(
 
 BOOL
 FsmDefIsStateInTable(
-  INPUT UINTN _state,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext)
+  UINTN _state,
+  FSM_DEF_CONTEXT_T * _fsmContext)
 {
   FSM_LOG_DEBUG("FSM Debug: %s\r\n",__FUNCTION__);
 
@@ -520,8 +520,8 @@ FsmDefIsStateInTable(
 
 FSM_DEF_RETURN_OP_E
 FsmGetLastEvent(
-  INPUT UINTN _fsmUid,
-  OUTPUT UINTN * _lastEvent
+  UINTN _fsmUid,
+  UINTN * _lastEvent
   )
 {
 
@@ -556,7 +556,7 @@ FsmGetLastEvent(
 
 FSM_DEF_RETURN_OP_E
 FsmDefPrintEvtBuff(
-  INPUT UINTN _fsmUid)
+  UINTN _fsmUid)
 {
 
     //! Go through all the contexts.

@@ -162,7 +162,7 @@ FsmDefInit ();
  */
 FSM_DEF_RETURN_OP_E
 FsmDefCreate (
-  INPUT FSM_DEF_CONTEXT_T * _newFsmContext);
+  FSM_DEF_CONTEXT_T * _newFsmContext);
 
 /**
  * @brief Function for running in a main loop.
@@ -180,8 +180,8 @@ FsmDefMainLoop ();
  */
 FSM_DEF_RETURN_OP_E
 FsmDefHandler (
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext);
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext);
 
 /**
  * @brief Function for handling the events of a lower FSM to a Higher FSM,
@@ -192,8 +192,8 @@ FsmDefHandler (
  */
 FSM_DEF_RETURN_OP_E
 FsmDefRunEventManager (
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext);
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext);
 
 /**
  * @brief Function for dispatching  a new event of a FSM
@@ -203,8 +203,8 @@ FsmDefRunEventManager (
  */
 FSM_DEF_RETURN_OP_E
 FsmDefSetNextEvent (
-  INPUT UINTN _fsmUid,
-  INPUT UINTN _evt);
+  UINTN _fsmUid,
+  UINTN _evt);
 
 /**
  * @brief Function for getting the state of a FSM.
@@ -213,7 +213,7 @@ FsmDefSetNextEvent (
  */
 UINTN
 FsmDefGetState (
-  INPUT UINTN _fsmUid);
+  UINTN _fsmUid);
 
 /**
  * @brief Function for erasing all FSMs
@@ -223,30 +223,30 @@ UINTN
 FsmDefEraseFsmBuff ();
 
 FSM_DEF_CONTEXT_T * FsmDefUidExist(
-  INPUT UINTN _fsmUid);
+  UINTN _fsmUid);
 
 FSM_DEF_RETURN_OP_E FsmDefConcatenateFsmUidToFsmTable(
-  INPUT UINTN _fsmUid,
-  INPUT FSM_DEF_TABLE_HND_T * _table
+  UINTN _fsmUid,
+  FSM_DEF_TABLE_HND_T * _table
   );
 
 BOOL FsmDefIsEvtInTable(
-  INPUT UINTN _evt,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext);
+  UINTN _evt,
+  FSM_DEF_CONTEXT_T * _fsmContext);
 
 BOOL FsmDefIsStateInTable(
-  INPUT UINTN _state,
-  INPUT FSM_DEF_CONTEXT_T * _fsmContext);
+  UINTN _state,
+  FSM_DEF_CONTEXT_T * _fsmContext);
 
 FSM_DEF_RETURN_OP_E
 FsmGetLastEvent(
-  INPUT UINTN _fsmUid,
-  OUTPUT UINTN * _lastEvent
+  UINTN _fsmUid,
+  UINTN * _lastEvent
   );
 
 FSM_DEF_RETURN_OP_E
 FsmDefPrintEvtBuff(
-  INPUT UINTN _fsmUid);
+  UINTN _fsmUid);
 
 FSM_DEF_RETURN_OP_E
 FsmDefIsTherePendingEvents(BOOL *_FlagOcurs);

@@ -22,10 +22,6 @@
 #define NULL    0
 #endif
 
-#define INPUT
-#define OUTPUT
-
-
 #define STRUCT    struct
 #define VOLATILE  volatile
 #define STATIC    static
