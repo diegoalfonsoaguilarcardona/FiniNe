@@ -8,7 +8,6 @@
  */
 
 
-#include "Arduino.h"
 #include "FiniNe.h"
 
 FiniNe::FiniNe()
@@ -17,8 +16,8 @@ FiniNe::FiniNe()
 
 FSM_DEF_RETURN_OP_E FiniNe::begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE_T table[], UINTN tableSize, FSM_EVENT_MANAGER_LIST_T eventManagerList[], UINTN eventManagerListSize)
 {
-  
-  fsmContext.fsmUid = fsmId;
+  this->fsmId = fsmId << 16;
+  fsmContext.fsmUid = this->fsmId;
   // Implement context for this FSM
   fsmContext.currentState = initialState;
   fsmContext.eventHnd.eventIndex=   0;
@@ -27,18 +26,13 @@ FSM_DEF_RETURN_OP_E FiniNe::begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE
   fsmContext.tableHnd.pTable = (FSM_DEF_TABLE_T *) table;
   fsmContext.eventManagerHnd.listSize = eventManagerListSize;
   fsmContext.eventManagerHnd.pList =  (FSM_EVENT_MANAGER_LIST_T*)eventManagerList;
-
-  //this->fsmTable = table;
-  this->fsmId = fsmId;
   return FsmDefCreate(&fsmContext);
-  
-  return 0;
 }
 
 FSM_DEF_RETURN_OP_E FiniNe::begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE_T table[], UINTN tableSize)
 {
-  
-  fsmContext.fsmUid = fsmId;
+  this->fsmId = fsmId << 16;
+  fsmContext.fsmUid = this->fsmId;
   // Implement context for this FSM
   fsmContext.currentState = initialState;
   fsmContext.eventHnd.eventIndex=   0;
@@ -47,12 +41,7 @@ FSM_DEF_RETURN_OP_E FiniNe::begin(UINTN fsmId, UINTN initialState, FSM_DEF_TABLE
   fsmContext.tableHnd.pTable = (FSM_DEF_TABLE_T *) table;
   fsmContext.eventManagerHnd.listSize = 0;
   fsmContext.eventManagerHnd.pList =  (FSM_EVENT_MANAGER_LIST_T*) &emptyEventManager;
-
-  //this->fsmTable = table;
-  this->fsmId = fsmId;
   return FsmDefCreate(&fsmContext);
-  
-  return 0;
 }
 
 FSM_DEF_RETURN_OP_E FiniNe::setNextEvent(UINTN eventId){
