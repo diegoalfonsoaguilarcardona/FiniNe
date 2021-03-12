@@ -1,7 +1,7 @@
 # FiniNe
 Arduino version of the Fini-te state machi-Ne Library from [TaIO Systems](https://www.taiosystems.com)
 
-## Instalation
+## Installation
 To install this library copy the content of this repository in the *libraries* folder of your sketchbook (you can find or change the location of your sketchbook folder at File > Preferences > Sketchbook location).
 
 For example, if you go to your *sketckbook/libraries* folder, you should have something like this:
